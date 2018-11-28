@@ -1,10 +1,29 @@
-import React from "react";
+import React from 'react'
+
+const scissors ="https://i.imgur.com/pgjyhIZ.png"
+
+const rock ="https://i.imgur.com/LghSkIw.png"
+
+const paper ="https://i.imgur.com/2gsdqvR.png"
 
 const PlayerCard = (props)=>{
-  console.log(props)
-  return(
-    <div className="playerCard">{props.sign}</div>
-  );
-}
+  const sign = props.sign
+  console.log(props.sign)
+  const image= ""
 
-export default PlayerCard;
+  if (sign === "rock"){
+    image =rock;
+
+  }
+  else if (sign === "paper"){
+    image =paper;
+  }
+  else {
+    image = scissors
+  }
+  return(
+    <div className="player-card">{}
+    <img src={image}/></div>
+  )
+}
+export default PlayerCard
