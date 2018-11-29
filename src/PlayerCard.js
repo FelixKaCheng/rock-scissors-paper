@@ -8,8 +8,7 @@ const paper ="https://i.imgur.com/2gsdqvR.png"
 
 const PlayerCard = (props)=>{
   const sign = props.sign
-  console.log(props.sign)
-  const image= ""
+  let image= ""
 
   if (sign === "rock"){
     image =rock;

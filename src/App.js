@@ -9,10 +9,11 @@ constructor(){
     this.state={
       playerOne:"rock",
       playerTwo: "scissors"
-    }
+    }// state is always an object that has key and values that are able to change
   }
 
 // We put our methods here...
+// setState is a react method to change state
 playGame=()=>{
   this.setState({
     playerOne:this.signs[Math.floor(Math.random()*3)],
@@ -27,19 +28,19 @@ decideWinner = () => {
     return "It's a Tie!"
   }
   else if ((p1 === "rock" && p2 === "scissors") || (p1 === "scissors" && p2 === "paper") || (p1 === "paper" && p2 === "rock"))
-    return "Player One Wins!"
+    return "Player One Wins!!"
   else {
-    return "Player Two Wins!"
+    return "Player Two Wins!!"
   }
 }
+// setting a key value called 'sign' for props in PlayerCard down there
+// Everytime we change state, react will rerender
 render(){
   return(
     <div className="style">
       <div>
       <PlayerCard sign={this.state.playerOne}/>
       <PlayerCard sign={this.state.playerTwo}/>
-
-      <PlayerCard/>
       </div>
     <div className="winner">{this.decideWinner()}</div>
     <button type="button" onClick={this.playGame}>Play the Game</button>
